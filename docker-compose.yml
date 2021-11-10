@@ -1,0 +1,16 @@
+version: "2"
+services:
+  web:
+    stdin_open: true
+    tty: true
+    image: node:16
+    container_name: tinyweb
+    restart: always
+    command: node /code/tinyweb.js
+    environment:
+      WEBSERVER_PORT: ${WEBSERVER_PORT}
+    volumes:
+      - ${DOCUMENT_ROOT}:/docroot
+      - .:/code
+    ports:
+      - ${WEBSERVER_PORT}:80
