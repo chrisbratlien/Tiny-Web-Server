@@ -60,8 +60,10 @@ var Console = require('console').Console;
 console.log('process.env', process.env);
 
 var MIME_TYPES = {
+    'c':'text/plain',
     'css': 'text/css',
     'gif': 'image/gif',
+    'h':'text/plain',
     'htm': 'text/html',
     'html': 'text/html',
     'ico': 'image/x-icon',
@@ -70,7 +72,9 @@ var MIME_TYPES = {
     'js': 'text/javascript',
     'json': 'application/json',
     'png': 'image/png',
+    'tcl':'text/plain',
     'txt': 'text/text'
+
 };
 
 // https://github.com/rosszurowski/mime-sniffer/blob/master/lib/numbers.js
@@ -83,6 +87,7 @@ var MIME_SNIFF_TYPES = [
     { test: [0x47, 0x49, 0x46, 0x38, 0x39, 0x61], mime: 'image/gif' },
     { test: [0x47, 0x49, 0x46, 0x38, 0x37, 0x61], mime: 'image/gif' },
     { offset: 8, test: "WEBPVP8", mime: 'image/webp' },
+    { test: "<svg", mime: 'image/svg+xml' },
 
 
     //video
